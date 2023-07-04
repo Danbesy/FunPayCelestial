@@ -7,13 +7,23 @@ from typing import TYPE_CHECKING
 if TYPE_CHECKING:
     from celestial import Celestial
 
+from locales.localizer import Localizer
 from telebot.types import InlineKeyboardMarkup as K, InlineKeyboardButton as B
 import configparser
 import datetime
 import os.path
 import json
 import time
-
+from os.path import exists
+from FunPayAPI.common.utils import RegularExpressions
+from bs4 import BeautifulSoup as bs
+import tg_bot.CBT
+from bs4 import BeautifulSoup
+from FunPayAPI.account import Account
+from FunPayAPI.types import OrderStatuses
+from FunPayAPI.updater.events import *
+localizer = Localizer()
+_ = localizer.translate
 import Utils.celestial_tools
 from tg_bot import CBT
 
