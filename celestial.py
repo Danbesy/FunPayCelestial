@@ -55,7 +55,7 @@ def check_proxy(proxy: dict) -> bool:
 
 def get_celestial() -> None | Celestial:
     """
-    Возвращает существующий экземпляр кардинала.
+    Возвращает существующий экземпляр FunPayCelestial.
     """
     if hasattr(Celestial, "instance"):
         return getattr(Celestial, "instance")
@@ -141,7 +141,7 @@ class Celestial(object):
 
         self.balance: FunPayAPI.types.Balance | None = None
         self.raise_time = {}  # Временные метки поднятия категорий {id игры: след. время поднятия}
-        self.profile: FunPayAPI.types.UserProfile | None = None  # FunPay профиль для всего кардинала (+ хэндлеров)
+        self.profile: FunPayAPI.types.UserProfile | None = None  # FunPay профиль для всего FunPayCelestialа (+ хэндлеров)
         self.tg_profile: FunPayAPI.types.UserProfile | None = None  # FunPay профиль (для Telegram-ПУ)
         self.last_tg_profile_update = datetime.datetime.now()  # Последнее время обновления профиля для TG-ПУ
         self.curr_profile: FunPayAPI.types.UserProfile | None = None  # Текущий профиль (для восст. / деакт. лотов.)
@@ -231,7 +231,7 @@ class Celestial(object):
         попыток)
         :param attempts: максимальное кол-во попыток.
         :param update_telegram_profile: обновить ли информацию о профиле для TG ПУ?
-        :param update_main_profile: обновить ли информацию о профиле для всего кардинала (+ хэндлеров)?
+        :param update_main_profile: обновить ли информацию о профиле для всего FunPayCelestialа (+ хэндлеров)?
 
         :return: True, если информация обновлена, False, если превышено макс. кол-во попыток.
         """
@@ -522,7 +522,7 @@ class Celestial(object):
     # Управление процессом
     def init(self):
         """
-        Инициализирует кардинал: регистрирует хэндлеры, инициализирует и запускает Telegram бота,
+        Инициализирует FunPayCelestial: регистрирует хэндлеры, инициализирует и запускает Telegram бота,
         получает данные аккаунта и профиля.
         """
         self.add_handlers_from_plugin(handlers)
@@ -550,7 +550,7 @@ class Celestial(object):
 
     def run(self):
         """
-        Запускает кардинал после инициализации. Используется для первого старта.
+        Запускает FunPayCelestial после инициализации. Используется для первого старта.
         """
         self.run_id += 1
         self.start_time = int(time.time())
@@ -563,7 +563,7 @@ class Celestial(object):
 
     def start(self):
         """
-        Запускает кардинал после остановки. Не используется.
+        Запускает FunPayCelestial после остановки. Не используется.
         """
         self.run_id += 1
         self.run_handlers(self.pre_start_handlers, (self, ))
@@ -572,7 +572,7 @@ class Celestial(object):
 
     def stop(self):
         """
-        Останавливает кардинал. Не используется.
+        Останавливает FunPayCelestial. Не используется.
         """
         self.run_id += 1
         self.run_handlers(self.pre_start_handlers, (self, ))
@@ -825,3 +825,4 @@ class Celestial(object):
     @property
     def only_bot_msg_enabled(self) -> bool:
         return self.MAIN_CFG["NewMessageView"].getboolean("notifyOnlyBotMessages")
+
