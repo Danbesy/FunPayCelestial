@@ -350,7 +350,7 @@ class Account:
             img = image
 
         fields = {
-            'file': ("funpay_cardinal_image.png", img, "image/png"),
+            'file': ("funpay_celestial_image.png", img, "image/png"),
             'file_id': "0"
         }
         boundary = '----WebKitFormBoundary' + ''.join(random.sample(string.ascii_letters + string.digits, 16))
