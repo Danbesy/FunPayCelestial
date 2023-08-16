@@ -205,8 +205,6 @@ test_ad_key_created = """✅ Создан одноразовый ключ для
 <code>!автовыдача {}</code>"""
 
 about = """<b>🔮 FunPay Celestial 🔮 v{}</b>\n
-<i>Разработчик:</i> https://t.me/Danbesy
-<i>GitHub:</i> https://github.com/Danbesy/FunPayCelestial
 <i>FunPay:</i> https://funpay.com/users/1143244/ """
 
 sys_info = """<b><u>Сводка данных</u></b>
