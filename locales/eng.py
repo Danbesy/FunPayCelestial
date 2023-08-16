@@ -205,8 +205,6 @@ Send the command from below to chat with the user to whom you want to deliver th
 <code>!автовыдача {}</code>"""
 
 about = """<b>🔮 FunPay Celestial 🔮 v{}</b>\n
-<i>Developer:</i> https://t.me/Danbesy
-<i>GitHub:</i> https://github.com/Danbesy/FunPayCelestial
 <i>FunPay:</i> https://funpay.com/users/1143244/ """
 
 sys_info = """<b><u>Data summary</u></b>
