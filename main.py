@@ -63,7 +63,7 @@ logger = logging.getLogger("main")
 logger.debug("------------------------------------------------------------------")
 
 
-print(logo)
+print(logo.encode('utf-8'))
 print(f"{Fore.WHITE}{Style.BRIGHT}v{VERSION}{Style.RESET_ALL}\n")
 print(f"{Fore.MAGENTA}{Style.BRIGHT}By {Fore.WHITE}{Style.BRIGHT}Danbesy{Style.RESET_ALL}")
 print(f"{Fore.MAGENTA}{Style.BRIGHT} * Telegram: {Fore.WHITE}{Style.BRIGHT}https://t.me/Danbesy{Style.RESET_ALL}")
